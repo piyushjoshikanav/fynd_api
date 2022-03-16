@@ -31,9 +31,9 @@ const User =require("../models/user.js");
 const  mongoose  = require("mongoose");
 const create_user =(req,res,next)=>{
     //1 try finding if the user exists or not
-    User.find({email:req.body.email})
+    User.find({mail:req.body.mail})
 .exec()
-.then(user=>{
+.then((user)=>{
     console.log("this is the user");
     console.log(user);
     console.log("user ends");
@@ -46,15 +46,15 @@ const create_user =(req,res,next)=>{
     else{
         // if we are in this block . that means user is not found,that means we have to create a new user
         const user = new User({
-            _id: new mongoose.Types.object.id(),
+            _id:mongoose.Types.ObjectId(),
             first_name:req.body.first_name,
             last_name: req.body.last_name,
-            email:req.body.email,
+            mail:req.body.mail,
             password:req.body.password,
             accessLevel:req.body.accessLevel
         })
         user.save()
-        .then(result =>{
+        .then((result) =>{
             //in this block , we capture the success result.
             console.log("this is the result from saving the user");
             console.log(result);
@@ -75,7 +75,7 @@ const create_user =(req,res,next)=>{
 })
 }
 const get_all_user=(req,res,next)=>{
-    user.find()
+    User.find()
     .exec()
     .then((users)=>{
         console.log(users);

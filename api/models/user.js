@@ -6,21 +6,21 @@ const userSchema = mongoose.Schema({
         type:String,
         required:true
     },
-    last_name:String,
-    email:{
-        Type:String,
+    last_name:{Type:String},
+    mail:{
+        type:String,
         required:true,
         unique:true,
-        match:/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+        // match:/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
     },
     password:{
     type:String,
     required:true
     }
     ,accessLevel:{
-        Type:String,
+        type:String,
         default:"User"
     }        
 }
-)
+);
 module.exports=mongoose.model("User",userSchema)

@@ -45,11 +45,37 @@ console.log("hello");
 
 
 
-//03-03-22
+// //03-03-22
+// const express = require("express");
+// const app=express();
+// const mongoose = require("mongoose")
+// const dbUrl="mongodb+srv://piyushjoshi1:piyush123@fyndjs.ljlal.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+// mongoose.connect(dbUrl,{
+//     useNewUrlParser:true,
+//     // useCreateIndex:true,
+//     useUnifiedTopology:true
+// }).then(
+//     ()=>console.log("mongoDB Is Connected")
+// ).catch(
+//     (err)=>console.log(err)
+// )
+// const userRouter=require("../api/routes/user.js")
+
+
+// const morgan =require("morgan");
+// const bodyParser =require("body-parser");
+// app.use(morgan("dev"));
+// app.use(bodyParser.urlencoded({extended:true}));
+// app.use(bodyParser.json());
+// app.use("/users",userRouter);
+
+// module.exports=app;
+
+//08-03-22
 const express = require("express");
 const app=express();
 const mongoose = require("mongoose")
-const dbUrl="mongodb+srv://piyushjoshi:piyush123@fyndjs.ljlal.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const dbUrl="mongodb+srv://piyushjoshi1:piyush123@fyndjs.ljlal.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 mongoose.connect(dbUrl,{
     useNewUrlParser:true,
     // useCreateIndex:true,
@@ -59,7 +85,7 @@ mongoose.connect(dbUrl,{
 ).catch(
     (err)=>console.log(err)
 )
-const userRouter=require("../api/routes/user.js")
+const userRouter=require("../api/routes/order.js")
 
 
 const morgan =require("morgan");
