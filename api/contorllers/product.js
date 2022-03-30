@@ -10,7 +10,7 @@ product.save()
 .then(
    
 )
-.catch(error=>{res.status(500).json({message:"some error occured",console.error})})
+.catch(error=>{res.status(500).json({message:"some error occured", console:error})})
 
 }
 const get_all_products = ()=>{
@@ -21,11 +21,11 @@ Product.find()
     console.log("this is result from getting sinlge product");
         console.log(result);
         res.status(200).json({
-            message:
+            message:"working"
         })
 }
 )
-.catch(error=>{res.status(500).json({message:"some error occured",console.error})})
+.catch(error=>{res.status(500).json({message:"some error occured",console:error})})
 }
 const get_single_product = ()=>{
 const {productId}=req.params;
@@ -34,12 +34,12 @@ Product.find({
 })
 .exec()
 .then()
-.catch(error=>{res.status(500).json({message:"some error occured",console.error})})
+.catch(error=>{res.status(500).json({message:"some error occured",console:error})})
 
 }
 const update_single_product = ()=>{
-const {productId}:req.params;
-const updateOps ={};
+// const {productId}: req.params;
+// const updateOps ={};
 }
 const delete_single_product = ()=>{
 
