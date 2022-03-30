@@ -13,7 +13,7 @@ const{
 router.post("/",create_single_product)
 //get all product
 //
-router.get("/",)
+router.get("/",get_all_products)
 
 //get single prodcut
 router.get("/:productId")
